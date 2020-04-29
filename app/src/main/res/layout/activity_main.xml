@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/chooser_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/chooser_spinner_Top_Bottom_margin"
+
+        android:layout_marginBottom="@dimen/chooser_spinner_Top_Bottom_margin"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/school_chooser_spiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/chooser_spinner_Start_End_margin"
+            android:layout_marginTop="@dimen/chooser_spinner_Top_Bottom_margin"
+            android:layout_marginEnd="@dimen/chooser_spinner_Start_End_margin"
+            android:layout_marginBottom="@dimen/chooser_spinner_Top_Bottom_margin"
+            android:layout_weight="2"
+
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:id="@+id/student_chooser_spiner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/chooser_spinner_Start_End_margin"
+            android:layout_marginTop="@dimen/chooser_spinner_Top_Bottom_margin"
+            android:layout_marginEnd="@dimen/chooser_spinner_Start_End_margin"
+            android:layout_marginBottom="@dimen/chooser_spinner_Top_Bottom_margin"
+            android:layout_weight="2"
+
+            />
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_size"
+            android:layout_marginStart="@dimen/chooser_spinner_Start_End_margin"
+            android:layout_marginTop="@dimen/chooser_spinner_Top_Bottom_margin"
+            android:layout_marginEnd="@dimen/chooser_spinner_Start_End_margin"
+            android:layout_marginBottom="@dimen/chooser_spinner_Top_Bottom_margin"
+            android:layout_weight="1"
+            android:text="@string/find_profile"
+            android:textSize="@dimen/text_size"
+            android:onClick="updateUI"/>
+
+    </LinearLayout>
+
+    <ListView
+
+        android:id="@+id/main_activity_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/button_size"
+
+        />
+
+
+</LinearLayout>
