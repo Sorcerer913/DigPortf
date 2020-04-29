@@ -1,6 +1,5 @@
 package com.backend;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -35,7 +34,7 @@ public class GetInfoService implements Gettable{
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         for (int i = 0; i < 300; i++) {
             HashMap<String, String> hsMap = new HashMap<>();
-            hsMap.put("Name", "School: " + schoolName +", Class: " + classNum + ", Student");
+            hsMap.put("Name", "Student");
             arrayList.add(hsMap);
         }
         return arrayList;

@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
     final static String TAG = "MainActivity";
 
-    ListView listView;
-    Spinner schoolSpinner;
-    Spinner classSpinner;
+    private ListView listView;
+    private Spinner schoolSpinner;
+    private Spinner classSpinner;
 
-    String currentSchool;
-    String currentClass;
+    public String currentSchool;
+    public String currentClass;
 
     ArrayList<HashMap<String, String>> studentList = new ArrayList<>();
 
@@ -123,9 +123,10 @@ public class MainActivity extends AppCompatActivity {
         instance.putString("School", currentSchool);
         instance.putString("Class", currentClass);
         instance.putString("Student", "Student"/*((TextView) view).getText().toString()*/);
-
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent, instance);
+        Log.d(TAG, "Intent Profile: " + ((TextView) view).getText().toString());
+        Intent intent = new Intent(this, ProfileActivity.class)
+                .putExtras(instance);
+        startActivity(intent);
 
     }
 }

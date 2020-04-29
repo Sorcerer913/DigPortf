@@ -1,5 +1,6 @@
 package com;
 
+import android.content.Intent;
 import android.icu.text.CaseMap;
 import android.os.Bundle;
 
@@ -17,10 +18,17 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        Bundle data = getIntent().getExtras();
+        if(data != null){
+            setTitle(data.getString("Student"));
+        }else{
+            setTitle("");
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-//        setTitle(savedInstanceState.getString("Student"));
         toolBarLayout.setTitle(getTitle());
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
