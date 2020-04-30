@@ -66,7 +66,8 @@ public class StudentActivity extends AppCompatActivity {
 
         profileTextView = findViewById(R.id.profile_content_text_view);
 
-        profileTextView.setText(getStudentTextContent(schoolName, classNum, studentName));
+//        profileTextView.setText(getStudentTextContent(schoolName, classNum, studentName));
+        profileTextView.setText(getSharedPreferences("Students", Activity.MODE_PRIVATE).getString(schoolName+"$"+classNum+"$"+studentName, "$"));
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +111,8 @@ public class StudentActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog,int id) {
 
                                 profileTextView.setText(userInput.getText().toString());
-                                GetInfoService.getInstance().setStudentInfo(StudentActivity.this, schoolName, classNum, studentName);
+                                getSharedPreferences("Students", Activity.MODE_PRIVATE).edit().putString(schoolName+"$"+classNum+"$"+studentName, userInput.getText().toString()).commit();
+//                                GetInfoService.getInstance().setStudentInfo(StudentActivity.this, schoolName, classNum, studentName);
                             }
                         })
                 .setNegativeButton( R.string.cancel,
@@ -127,6 +129,7 @@ public class StudentActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+/*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -146,11 +149,13 @@ public class StudentActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        /*try {
+                        */
+/*try {
                             Thread.sleep(2000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
-                        }*/
+                        }*//*
+
                         editDocument(uri1, profileTextView.getText().toString());
                     }
                 }).start();
@@ -165,9 +170,11 @@ public class StudentActivity extends AppCompatActivity {
             ParcelFileDescriptor pfd = getContentResolver().openFileDescriptor(uri, "w");
             FileOutputStream fileOutputStream = new FileOutputStream(pfd.getFileDescriptor());
             fileOutputStream.write(text.getBytes(StandardCharsets.UTF_16BE));
-            /*PrintWriter writer = new PrintWriter(fileOutputStream);
+            */
+/*PrintWriter writer = new PrintWriter(fileOutputStream);
             writer.println(resultFileString);
-            writer.close();*/
+            writer.close();*//*
+
 
             fileOutputStream.close();
             pfd.close();
@@ -179,5 +186,6 @@ public class StudentActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+*/
 
 }

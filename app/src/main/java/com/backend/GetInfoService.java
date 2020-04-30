@@ -40,22 +40,41 @@ public class GetInfoService{
     public ArrayList<HashMap<String, String>> getSchools() {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
         HashMap hashMap;
-        for (int i = 1; i < 100; i++) {
-            hashMap = new HashMap<>();
-            hashMap.put("Name", "School"+i);
-            arrayList.add(hashMap);
-        }
+        hashMap = new HashMap<>();
+        hashMap.put("Name", "School1363");
+        arrayList.add(hashMap);
+        hashMap = new HashMap<>();
+        hashMap.put("Name", "School1539");
+        arrayList.add(hashMap);
+        hashMap = new HashMap<>();
+        hashMap.put("Name", "Synergy");
+        arrayList.add(hashMap);
         return arrayList;
     }
 
     //TODO: rewrite
     public ArrayList<HashMap<String, String>> getStudents(String schoolName, String classNum) {
         ArrayList<HashMap<String, String>> arrayList = new ArrayList<>();
-        for (int i = 0; i < 300; i++) {
-            HashMap<String, String> hsMap = new HashMap<>();
-            hsMap.put("Name", "Student");
+
+        if(schoolName.equals("School1363") && classNum.equals("10")){
+            HashMap<String, String> hsMap;
+            hsMap = new HashMap<>();
+            hsMap.put("Name", "Emelianov Maxim Alexadrovich");
+            arrayList.add(hsMap);
+            hsMap = new HashMap<>();
+            hsMap.put("Name", "Bacumenko Artem Sergeevich");
             arrayList.add(hsMap);
         }
+        if(schoolName.equals("School1539") && classNum.equals("9")){
+            HashMap<String, String> hsMap;
+            hsMap = new HashMap<>();
+            hsMap.put("Name", "Emelianov Maxim Alexadrovich");
+            arrayList.add(hsMap);
+            hsMap = new HashMap<>();
+            hsMap.put("Name", "Marya Ivanovna");
+            arrayList.add(hsMap);
+        }
+
         return arrayList;
     }
 
@@ -94,6 +113,7 @@ public class GetInfoService{
             e.printStackTrace();
             return null;
         }*/
+        /*
         try {
             Uri uri = new Uri.Builder().path(activity.getSharedPreferences("Students", Activity.MODE_PRIVATE).getString(schoolName+"$"+classNum+"$"+studentName, "")).build();
             Log.d(TAG, "URI: "+uri.toString());
@@ -104,10 +124,10 @@ public class GetInfoService{
 
 //            Scanner in = new Scanner(new File(uri.getPath()));
 
-            /*while (in.hasNextLine()){
+            *//*while (in.hasNextLine()){
                 stringBuilder.append(in.nextLine());
             }
-            in.close();*/
+            in.close();*//*
 
             return stringBuilder.toString();
 
@@ -115,6 +135,8 @@ public class GetInfoService{
             e.printStackTrace();
         }
         return "";
+        */
+        return null;
     }
 
     //TODO: rewrite
