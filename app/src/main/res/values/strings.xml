@@ -97,4 +97,11 @@
     <string name="school_choose">School choose</string>
     <string name="student_choose">Student choose</string>
     <string name="find_profile">Find</string>
+    <string name="noFileMessage">There are not portfolio here
+    you can edit it</string>
+    <string name="edit_text_profile_hint">Write here your portfolio</string>
+    <string name="portfolio">PortfolioEdit</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
 </resources>

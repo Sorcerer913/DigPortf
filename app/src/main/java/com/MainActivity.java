@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -120,11 +119,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goProfile(View view) {
         Bundle instance = new Bundle();
-        instance.putString("School", currentSchool);
-        instance.putString("Class", currentClass);
-        instance.putString("Student", "Student"/*((TextView) view).getText().toString()*/);
+        instance.putString("SchoolName", currentSchool);
+        instance.putString("ClassNum", currentClass);
+        instance.putString("StudentName", ((TextView) view).getText().toString());
         Log.d(TAG, "Intent Profile: " + ((TextView) view).getText().toString());
-        Intent intent = new Intent(this, ProfileActivity.class)
+        Intent intent = new Intent(this, StudentActivity.class)
                 .putExtras(instance);
         startActivity(intent);
 

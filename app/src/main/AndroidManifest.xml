@@ -3,6 +3,8 @@
     package="com.example.hackatone" >
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,7 +15,7 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name="com.ProfileActivity"
+            android:name="com.StudentActivity"
             android:label="@string/title_activity_profile"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
